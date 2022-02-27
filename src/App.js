@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { React } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Nav } from './pages/Nav';
+import { Home } from './pages/Home';
+import { Resume } from './pages/Resume';
+import { Portfolio } from './pages/Portfolio';
+import { WCAG } from './pages/WCAG';
+import { Contact } from './pages/Contact';
+import { PageError } from "./pages/PageError";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Nav />}>
+          <Route index element={<Home />} />
+          <Route path="resume" element={<Resume />} />
+          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="wcag" element={<WCAG />} />
+          <Route path="contact-me" element={<Contact />} />
+          <Route path="*" element={<PageError />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
