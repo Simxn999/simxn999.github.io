@@ -1,8 +1,12 @@
 function wallpaper() {
   const body = document.getElementsByTagName('body')[0];
+  for (let index = 0; index < body.children.length; index++)
+    if (body.children[index].name === 'egg') return;
+
   const egg = document.createElement('span');
   let isSet = false;
 
+  egg.name = 'egg';
   egg.style.position = 'fixed';
   egg.style.top = '0';
   egg.style.left = '0';
@@ -38,8 +42,8 @@ function password() {
     e.key === password[input.length] ? input.push(e.key) : input.length = 0;
     if (input.length !== password.length) return;
 
-    // Retrieved
-    console.log('buddy do be hoe sometimelement.style');
+    // TODO:
+    console.log('buddy do be hoe sometimes');
   };
 }
 

@@ -1,24 +1,21 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import { getAge } from "../resources/getAge";
-import { getResume } from "./Resume";
 
 
 export function Home() {
-  const age = useRef();
+  const [age, setAge] = useState(0);
 
-  async function printAge() {
-    const resume = await getResume();
-
-    age.current.innerHTML = getAge(resume.birthday);
-  }
-
-  useEffect(() => printAge());
+  useEffect(() => {
+    fetch('resume.json')
+      .then(r => r.json())
+      .then(r => setAge(getAge(r.birthday)));
+  });
 
   return (
     <main>
       <h1 className="main-title">Welcome!</h1>
       <p className="introduction">
-        My name is Simon Johansson and I am a <span ref={age}></span> year old software developer student situated in northern Sweden,
+        My name is Simon Johansson and I am a {age} year old software developer student situated in northern Sweden,
         Örnsköldsvik.
       </p>
     </main>
