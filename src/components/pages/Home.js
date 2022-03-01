@@ -1,8 +1,10 @@
+import "../../style/css/home.css";
+
 import { useEffect, useState } from "react";
-import { getAge } from "../resources/getAge";
+import { getAge } from "../extra/getAge";
 
 
-export function Home() {
+export const Home = () => {
   const [age, setAge] = useState(0);
 
   useEffect(() => {
@@ -10,6 +12,8 @@ export function Home() {
       .then(r => r.json())
       .then(r => setAge(getAge(r.birthday)));
   });
+
+  if (age === 0) return null;
 
   return (
     <main>
@@ -20,4 +24,4 @@ export function Home() {
       </p>
     </main>
   );
-}
+};

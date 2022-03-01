@@ -1,4 +1,4 @@
-export function getAge({ year, month, day }) {
+export const getAge = ({ year, month, day }) => {
   let time = new Date();
   let _year = time.getFullYear();
   let _month = time.getMonth() + 1;

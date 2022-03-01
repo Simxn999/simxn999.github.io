@@ -1,16 +1,15 @@
-import { React } from "react";
 import { Header } from './Header';
 import { Outlet as Content } from 'react-router-dom';
-import { InitializeEggs } from "./resources/eggs";
+import { Eggs } from "./extra/Eggs";
+import "../style/css/index.css";
 
-export function Page() {
-  InitializeEggs();
-
+export const Page = () => {
   return (
     <>
       <Header />
 
       <Content />
+      <Eggs />
     </>
   );
-}
+};

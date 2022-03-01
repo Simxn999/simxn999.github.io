@@ -1,0 +1,41 @@
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-style: normal;
+  text-align: center;
+}
+
+.contact > a {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  color: white;
+  font-size: 1.2rem;
+  padding-block: 15vh;
+  text-decoration: none;
+}
+
+.contact > a:hover, .contact > a:focus {
+  outline: none;
+  text-decoration: underline;
+  -webkit-text-decoration-color: dodgerblue;
+          text-decoration-color: dodgerblue;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+.contact > a:active {
+  color: dodgerblue;
+}
+
+@media (min-width: 38rem) {
+  .contact > a {
+    padding-block: 0;
+  }
+}
+/*# sourceMappingURL=contact_me.css.map */

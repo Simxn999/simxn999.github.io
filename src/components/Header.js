@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export function Header() {
+export const Header = () => {
   return (
     <header className="primary-header">
       <h1 className="header-title">Simon Johansson</h1>
@@ -10,7 +10,7 @@ export function Header() {
         <span></span>
       </label>
 
-      <nav id="aria-nav" className="primary-navigation">
+      <nav id="aria-nav" className="primary-navigation" onClick={() => document.getElementById('primary-navigation').checked = false}>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -31,4 +31,4 @@ export function Header() {
       </nav>
     </header>
   );
-}
+};

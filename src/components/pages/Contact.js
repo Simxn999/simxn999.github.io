@@ -1,4 +1,6 @@
-export function Contact() {
+import "../../style/css/contact_me.css";
+
+export const Contact = () => {
   return (
     <main>
       <section className="contact">
@@ -7,4 +9,4 @@ export function Contact() {
       </section>
     </main>
   );
-}
+};

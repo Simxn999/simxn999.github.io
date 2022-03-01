@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Page } from './Page';
-import { Home } from './nav/Home';
-import { Resume } from './nav/Resume';
-import { Portfolio } from './nav/Portfolio';
-import { WCAG } from './nav/WCAG';
-import { Contact } from './nav/Contact';
-import { PageError } from "./nav/PageError";
+import { Page } from './components/Page';
+import { Home } from './components/pages/Home';
+import { Resume } from './components/pages/Resume';
+import { Portfolio } from './components/pages/Portfolio';
+import { WCAG } from './components/pages/WCAG';
+import { Contact } from './components/pages/Contact';
+import { PageError } from "./components/pages/PageError";
 
 export default function App() {
   return (

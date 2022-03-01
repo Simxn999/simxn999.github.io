@@ -1,0 +1,19 @@
+main > ul {
+  display: flex;
+  flex-flow: column;
+  gap: 2rem;
+
+  > li {
+    text-align: center;
+
+    > h2 {
+      padding: 1em;
+      border: 1px solid white;
+      border-radius: 1em;
+    }
+
+    > p {
+      padding: 1em;
+    }
+  }
+}
