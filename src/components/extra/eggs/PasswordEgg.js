@@ -1,4 +1,4 @@
-import "../../../style/eggs/css/password_egg.css";
+import "../../../style/eggs/password_egg.scss";
 
 export const PasswordEgg = (setIsOpen) => {
   const password = [...'1337'];

@@ -1,4 +1,4 @@
-import "../../style/css/wcag.css";
+import "../../style/wcag.scss";
 
 export const WCAG = () => {
   return (

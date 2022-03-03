@@ -1,4 +1,4 @@
-import "../../style/css/home.css";
+import "../../style/home.scss";
 
 import { useEffect, useState } from "react";
 import { getAge } from "../extra/getAge";

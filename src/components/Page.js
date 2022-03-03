@@ -1,7 +1,7 @@
 import { Header } from './Header';
 import { Outlet as Content } from 'react-router-dom';
 import { Eggs } from "./extra/Eggs";
-import "../style/css/index.css";
+import "../style/index.scss";
 
 export const Page = () => {
   return (

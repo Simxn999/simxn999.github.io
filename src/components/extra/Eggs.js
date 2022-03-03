@@ -13,6 +13,6 @@ export function Eggs() {
       <WallpaperEgg />
       <PasswordEggModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </>,
-    document.getElementById('xtra')
+    document.getElementById('extra')
   );
 }

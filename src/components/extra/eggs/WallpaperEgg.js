@@ -1,4 +1,4 @@
-import "../../../style/eggs/css/wallpaper_egg.css";
+import "../../../style/eggs/wallpaper_egg.scss";
 
 export const WallpaperEgg = () => {
   return (

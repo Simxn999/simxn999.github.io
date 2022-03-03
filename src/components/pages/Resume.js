@@ -1,19 +1,28 @@
-import "../../style/css/resume.css";
+import "../../style/resume.scss";
 import { useEffect, useState } from "react";
 import { v4 as key } from "uuid";
 import { getAge } from "../extra/getAge";
 
 export const Resume = () => {
   const [resume, setResume] = useState(false);
+  const [info, setInfo] = useState('Loading resume...');
 
   useEffect(() => {
     fetch('resume.json')
-      .then(r => r.json())
-      .then(r => setResume(r));
+      .then(response => response.json())
+      .then(response => setResume(response))
+      .catch(error => {
+        setInfo('Error loading resume!');
+        console.log(error);
+      });
   }, []);
 
-
-  if (!resume) return null;
+  if (!resume)
+    return (
+      <h1 style={{ textAlign: 'center', padding: '3rem' }}>
+        {info}
+      </h1>
+    );
 
   return (
     <article className="resume">
