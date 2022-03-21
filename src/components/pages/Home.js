@@ -1,20 +1,6 @@
 import "../../style/home.scss";
 
-import { useEffect, useState } from "react";
-import { getAge } from "../extra/getAge";
-
-
-export const Home = () => {
-  const [age, setAge] = useState(0);
-
-  useEffect(() => {
-    fetch('resume.json')
-      .then(r => r.json())
-      .then(r => setAge(getAge(r.birthday)));
-  });
-
-  if (age === 0) return null;
-
+export function Home({ age }) {
   return (
     <main>
       <h1 className="main-title">Welcome!</h1>

@@ -1,24 +1,24 @@
+import "../../../style/portfolio.scss";
+
 import { useState } from 'react';
 import { Modal } from "./Modal";
 
 export function Project({ project }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const open = () => setIsOpen(true);
-  const close = () => setIsOpen(false);
+  const [open, setOpen] = useState(false);
 
   return (
-    <li id={project.id}>
-      <button style={{ border: 0, backgroundColor: 'transparent' }} onClick={open}>
+    <>
+      <button className="project-clickable" onClick={() => setOpen(true)}>
         <h2 className="title">{project.name}</h2>
         <div className="frame">
-          <img src={project.owner.avatar_url} alt="Project" />
+          <img src={project.owner.avatar_url ? project.owner.avatar_url : "buddy1.jpg"} alt="Project" />
         </div>
       </button>
       {
-        isOpen ? (
-          <Modal {...{ project, close }} />
+        open ? (
+          <Modal {...{ project, close: () => setOpen(false) }} />
         ) : null
       }
-    </li>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import "../../style/wcag.scss";
 
-export const WCAG = () => {
+export function WCAG() {
   return (
     <main>
       <h1 className="main-title">Web Content Accessibility Guidelines</h1>

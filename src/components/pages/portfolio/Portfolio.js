@@ -1,27 +1,12 @@
-import { useEffect, useState } from "react";
 import "../../../style/portfolio.scss";
 import { Project } from "./Project";
 
-export const Portfolio = () => {
-  const [repos, setRepos] = useState(false);
-  const [info, setInfo] = useState('Loading portfolio...');
-
-  useEffect(() => {
-    fetch('https://api.github.com/users/Simxn999/repos')
-      .then(response => response.json())
-      .then(response => setRepos(response))
-      .catch(error => {
-        setInfo('Error loading portfolio!');
-        console.log(error);
-      });
-  }, []);
-
-  if (!repos)
-    return (
-      <h1 style={{ textAlign: 'center', padding: '3rem' }}>
-        {info}
-      </h1>
-    );
+export function Portfolio({ repos }) {
+  if (!repos) return (
+    <h1 style={{ textAlign: 'center', padding: '3rem' }}>
+      Loading Portfolio...
+    </h1>
+  );
 
   return (
     <main>
@@ -30,7 +15,9 @@ export const Portfolio = () => {
         <ul>
           {
             repos.map(project =>
-              <Project key={project.id} project={project} />
+              <li key={project.id}>
+                <Project {...{ project }} />
+              </li>
             )
           }
         </ul>

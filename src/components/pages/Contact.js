@@ -1,6 +1,6 @@
 import "../../style/contact_me.scss";
 
-export const Contact = () => {
+export function Contact() {
   return (
     <main>
       <section className="contact">

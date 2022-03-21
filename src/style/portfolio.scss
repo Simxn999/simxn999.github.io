@@ -7,7 +7,7 @@
   gap: 1rem;
 }
 
-.projects > ul > li > input[type="checkbox"] + label {
+.project-clickable {
   cursor: pointer;
   display: flex;
   flex-wrap: wrap;
@@ -32,56 +32,13 @@
       width: 100%;
       object-fit: cover;
 
-      &[src*="website"] {
+      &[src*="99795909"] {
+        background-color: #0e0e0e;
         object-fit: contain;
-        transform: scale(0.9);
       }
-
-      &[src*="buddy2"] {
-        object-position: center 60%;
-      }
-
-      &[src*="buddy6"] {
-        object-position: center 40%;
-      }
-
-      &[src*="buddy5"] {
-        transform: scale(2);
-        object-position: center 45%;
-      }
-
-      &[src*="kitten"] {
-        transform: scale(2);
-        object-position: center 45%;
-      }
-    }
-  }
-}
-
-.projects input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-
-  &:focus {
-    + label {
-      > .title {
-        color: dodgerblue;
-      }
-
-      > .frame {
-        border: 1px solid dodgerblue;
-      }
-    }
-  }
-
-  &:checked ~ .modal {
-    visibility: visible;
-
-    + .close-background {
-      visibility: visible;
-
-      + .close {
-        visibility: visible;
+      
+      &[src*="102039990"] {
+        object-fit: contain;
       }
     }
   }
@@ -89,7 +46,6 @@
 
 .modal {
   cursor: default;
-  visibility: hidden;
   position: fixed;
   z-index: 100;
   top: 2rem;
@@ -131,15 +87,14 @@
 
 .close-background {
   cursor: pointer;
-  visibility: hidden;
   z-index: 90;
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
 }
 
 .close {
-  visibility: hidden;
   cursor: pointer;
   position: fixed;
   width: 2.5rem;
